@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Edit By Subhan — Modern, premium and responsive websites for businesses and personal brands.">
+<title>Web Edit By Subhan | Creative Web Designer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#fff;overflow-x:hidden}
+:root{--gold:#d8a84e;--gold2:#f5d58e;--border:rgba(255,255,255,.12);--glass:rgba(255,255,255,.055)}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1200px;margin:auto}
+section{padding:100px 0;position:relative}
+body:before{content:"";position:fixed;width:500px;height:500px;background:rgba(216,168,78,.09);filter:blur(130px);border-radius:50%;top:-180px;left:-180px;z-index:-2}
+body:after{content:"";position:fixed;width:500px;height:500px;background:rgba(80,90,255,.06);filter:blur(140px);border-radius:50%;right:-200px;bottom:-150px;z-index:-2}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:.3s}
+nav.scrolled{background:rgba(5,5,5,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:13px 0}
+.nav{width:90%;max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:900;letter-spacing:1px}.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-size:14px;color:#ccc;transition:.3s}.nav-links a:hover{color:var(--gold2)}
+.menu{display:none;font-size:27px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:60px}
+.small-title{color:var(--gold2);font-size:13px;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(55px,8vw,100px);line-height:.9;letter-spacing:-5px;margin-bottom:28px}
+.hero h1 span{color:var(--gold)}
+.hero-text{color:#aaa;font-size:18px;line-height:1.8;max-width:650px}
+.buttons{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 25px;border-radius:50px;font-size:14px;font-weight:bold;display:inline-block;transition:.3s}
+.primary{background:var(--gold);color:#080808}.primary:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(216,168,78,.25)}
+.outline{border:1px solid var(--border);background:rgba(255,255,255,.03)}.outline:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-4px)}
+.profile-card{height:500px;border:1px solid rgba(216,168,78,.5);border-radius:35px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));backdrop-filter:blur(18px);display:flex;align-items:flex-end;justify-content:center;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(216,168,78,.06)}
+.profile-card:before{content:"";position:absolute;width:310px;height:310px;border-radius:50%;background:var(--gold);opacity:.12;filter:blur(55px)}
+.profile-photo{width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;display:block}
+.profile-card:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,.35))}
+
+/* SECTIONS */
+.label{color:var(--gold2);font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:14px}
+.title{font-size:clamp(38px,5vw,64px);line-height:1;margin-bottom:18px}
+.description{color:#999;max-width:680px;line-height:1.8}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}
+.about-card{padding:38px;border:1px solid var(--border);border-radius:28px;background:var(--glass);backdrop-filter:blur(15px)}
+.about-card h3{font-size:30px;color:var(--gold2);margin-bottom:16px}.about-card p{color:#aaa;line-height:1.9}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
+.service{padding:32px;min-height:250px;border:1px solid var(--border);border-radius:25px;background:var(--glass);transition:.35s}
+.service:hover{transform:translateY(-8px);border-color:rgba(216,168,78,.5)}
+.service-number{color:var(--gold);font-size:12px;letter-spacing:2px}.service h3{font-size:24px;margin:32px 0 13px}.service p{color:#999;line-height:1.8}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:40px}
+.skill{padding:28px 18px;text-align:center;border:1px solid var(--border);border-radius:20px;background:var(--glass);transition:.3s}
+.skill:hover{transform:translateY(-6px);border-color:var(--gold)}.skill strong{display:block;font-size:30px;color:var(--gold);margin-bottom:8px}.skill span{color:#aaa;font-size:13px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:45px}
+.step{padding:28px 18px;border-top:1px solid var(--border)}.step span{color:var(--gold);font-size:12px;letter-spacing:2px}.step h3{margin:14px 0 9px}.step p{color:#888;font-size:14px;line-height:1.7}
+.work{margin-top:45px;padding:65px 30px;border:1px solid var(--border);border-radius:30px;text-align:center;background:radial-gradient(circle at center,rgba(216,168,78,.1),transparent 60%)}
+.work h3{font-size:38px;margin-bottom:14px}.work p{color:#999;max-width:650px;margin:auto;line-height:1.8}
+.contact{padding:70px 30px;border:1px solid var(--border);border-radius:35px;text-align:center;background:radial-gradient(circle at center,rgba(216,168,78,.1),transparent 65%)}
+.contact h2{font-size:clamp(42px,6vw,72px);margin-bottom:18px}.contact p{color:#999;max-width:650px;margin:auto;line-height:1.8}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
+.contact-card{padding:24px 14px;border:1px solid var(--border);border-radius:20px;background:rgba(255,255,255,.04)}
+.contact-card .icon{font-size:26px;margin-bottom:9px}.contact-card strong{display:block;color:var(--gold2);margin-bottom:7px}.contact-card span,.contact-card a{color:#aaa;font-size:13px;word-break:break-word}
+footer{border-top:1px solid var(--border);padding:28px 0;color:#777;font-size:13px}.footer{width:90%;max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px}.footer strong{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(30px);transition:1s ease}.reveal.active{opacity:1;transform:translateY(0)}
+
+/* SNOW */
+#snowCanvas{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:99999;
+display:block;
+}
+/* MOBILE */
+@media(max-width:850px){
+.menu{display:block}
+.nav-links{display:none;position:absolute;top:65px;left:5%;width:90%;padding:23px;background:rgba(8,8,8,.98);border:1px solid var(--border);border-radius:20px;flex-direction:column;gap:19px}
+.nav-links.show{display:flex}.hero-grid{grid-template-columns:1fr}.profile-card{height:400px}.about-grid{grid-template-columns:1fr}
+.services{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:550px){
+section{padding:78px 0}.hero h1{font-size:57px;letter-spacing:-4px}.hero-grid{gap:38px}.profile-card{height:390px;border-radius:28px}
+.services,.process{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+<canvas id="snowCanvas"></canvas>
+
+<nav id="navbar">
+<div class="nav">
+<a href="#home" class="logo">WEB <span>EDIT</span></a>
+<div class="menu" id="menu">☰</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+<li><a href="#process">Process</a></li><li><a href="#work">Work</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container"><div class="hero-grid">
+<div class="reveal">
+<div class="small-title">Creative Web Designer</div>
+<h1>WEB EDIT<br>BY <span>SUBHAN</span></h1>
+<p class="hero-text">I create modern, responsive and premium websites designed to give businesses and personal brands a powerful presence on the internet.</p>
+<div class="buttons">
+<a href="#contact" class="btn primary">Let's Work Together →</a>
+<a href="#services" class="btn outline">Explore Services</a>
+</div>
+</div>
+<div class="profile-card reveal">
+<img class="profile-photo" src="subhan-profile.jpg" alt="Subhan - Web Edit By Subhan">
+</div>
+</div></div>
+</section>
+
+<section id="about"><div class="container"><div class="about-grid">
+<div class="reveal"><div class="label">About Me</div><h2 class="title">Designing digital experiences that stand out.</h2><p class="description">Creative design, modern technology and attention to detail — combined into one professional web experience.</p></div>
+<div class="about-card reveal"><h3>Web Edit By Subhan</h3><p>I'm Subhan Mohi Ud Din, a creative web designer focused on building clean, modern and responsive websites. I believe a website should not only look beautiful — it should also feel smooth, simple and professional for every visitor.</p></div>
+</div></div></section>
+
+<section id="services"><div class="container">
+<div class="reveal"><div class="label">What I Do</div><h2 class="title">Services</h2><p class="description">Professional web solutions created around your brand, your goals and your audience.</p></div>
+<div class="services">
+<div class="service reveal"><div class="service-number">01 / DESIGN</div><h3>Modern Web Design</h3><p>Premium layouts, beautiful typography, smooth interactions and a strong visual identity.</p></div>
+<div class="service reveal"><div class="service-number">02 / DEVELOPMENT</div><h3>Business Websites</h3><p>Professional websites for businesses, services and personal brands.</p></div>
+<div class="service reveal"><div class="service-number">03 / RESPONSIVE</div><h3>Mobile Friendly</h3><p>Every website is designed to work beautifully across phones, tablets and desktops.</p></div>
+<div class="service reveal"><div class="service-number">04 / E-COMMERCE</div><h3>Online Stores</h3><p>Modern product-focused websites with simple customer ordering experiences.</p></div>
+<div class="service reveal"><div class="service-number">05 / UPDATES</div><h3>Website Updates</h3><p>New products, new sections, design changes and ongoing website improvements.</p></div>
+<div class="service reveal"><div class="service-number">06 / SUPPORT</div><h3>Web Support</h3><p>Reliable help with website fixes, improvements and future changes.</p></div>
+</div></div></section>
+
+<section><div class="container"><div class="reveal"><div class="label">My Focus</div><h2 class="title">Built With Purpose.</h2></div>
+<div class="skills">
+<div class="skill reveal"><strong>UI</strong><span>Modern Interfaces</span></div>
+<div class="skill reveal"><strong>UX</strong><span>Simple Experiences</span></div>
+<div class="skill reveal"><strong>RWD</strong><span>Responsive Design</span></div>
+<div class="skill reveal"><strong>⚡</strong><span>Fast & Clean</span></div>
+</div></div></section>
+
+<section id="process"><div class="container"><div class="reveal"><div class="label">My Process</div><h2 class="title">From Idea To Website.</h2></div>
+<div class="process">
+<div class="step reveal"><span>01</span><h3>Discuss</h3><p>Understand your business, goals and requirements.</p></div>
+<div class="step reveal"><span>02</span><h3>Design</h3><p>Create the visual direction and structure.</p></div>
+<div class="step reveal"><span>03</span><h3>Build</h3><p>Develop the website and make it responsive.</p></div>
+<div class="step reveal"><span>04</span><h3>Launch</h3><p>Publish the finished website and make it ready to share.</p></div>
+</div></div></section>
+
+<section id="work"><div class="container"><div class="reveal"><div class="label">My Work</div><h2 class="title">Selected Work</h2><p class="description">A growing collection of websites and digital projects.</p></div>
+<div class="work reveal"><h3>Projects Coming Soon</h3><p>New websites and creative projects will be showcased here as they are completed.</p><br><a href="#contact" class="btn primary">Start A Project →</a></div>
+</div></section>
+
+<section id="contact"><div class="container"><div class="contact reveal">
+<div class="label">Let's Connect</div><h2>Let's Build Something Great.</h2>
+<p>Have an idea for a website? Get in touch and let's turn your idea into a modern digital experience.</p>
+<div class="buttons">
+<a href="https://wa.me/923204475938" target="_blank" rel="noopener" class="btn primary">💬 WhatsApp Me</a>
+<a href="mailto:subhanmohiuddin056@gmail.com" class="btn outline">✉️ Send Email</a>
+</div>
+<div class="contact-grid">
+<div class="contact-card"><div class="icon">📱</div><strong>Phone</strong><span>03204475938</span></div>
+<div class="contact-card"><div class="icon">✉️</div><strong>Email</strong><a href="mailto:subhanmohiuddin056@gmail.com">subhanmohiuddin056@gmail.com</a></div>
+<div class="contact-card"><div class="icon">📸</div><strong>Instagram</strong><a href="https://instagram.com/Mrhigh506" target="_blank" rel="noopener">@Mrhigh506</a></div>
+<div class="contact-card"><div class="icon">🕐</div><strong>Working Hours</strong><span>08:00 AM – 09:00 PM</span></div>
+</div></div></div></section>
+
+<section><div class="container"><div class="about-card reveal" style="text-align:center">
+<div class="label">Location</div><h3>Gujranwala, Pakistan</h3><p>Shahinabad, Atta Muhammad Road,<br>Punjab, Pakistan</p><br>
+<a href="https://www.google.com/maps/search/?api=1&query=Shahinabad+Atta+Muhammad+Road+Gujranwala" target="_blank" rel="noopener" class="btn primary">📍 Open Google Maps</a>
+</div></div></section>
+
+<footer><div class="footer"><div>© 2026 <strong>Web Edit By Subhan</strong></div><div>Designed & Built by Subhan.</div></div></footer>
+
+<script>
+const navbar=document.getElementById("navbar");
+window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>40));
+
+const menu=document.getElementById("menu");
+const navLinks=document.getElementById("navLinks");
+menu.addEventListener("click",()=>navLinks.classList.toggle("show"));
+document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>navLinks.classList.remove("show")));
+
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("active")});
+},{threshold:.12});
+reveals.forEach(el=>observer.observe(el));
+
+const canvas=document.getElementById("snowCanvas");
+const ctx=canvas.getContext("2d");
+let flakes=[];
+
+function resizeSnow(){
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  canvas.width=innerWidth*dpr;
+  canvas.height=innerHeight*dpr;
+  canvas.style.width=innerWidth+"px";
+  canvas.style.height=innerHeight+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  createSnow();
+}
+
+function createSnow(){
+  const count=Math.max(70,Math.min(150,Math.floor(innerWidth/7)));
+  flakes=Array.from({length:count},()=>({
+    x:Math.random()*innerWidth,
+    y:Math.random()*innerHeight,
+    r:1+Math.random()*3,
+    speed:.7+Math.random()*2.2,
+    drift:-.5+Math.random(),
+    opacity:.45+Math.random()*.55
+  }));
+}
+
+function drawSnow(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  for(const f of flakes){
+    ctx.beginPath();
+    ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${f.opacity})`;
+    ctx.fill();
+    f.y+=f.speed;
+    f.x+=f.drift+Math.sin(f.y*.01)*.25;
+    if(f.y>innerHeight+10){
+      f.y=-10;
+      f.x=Math.random()*innerWidth;
+    }
+    if(f.x>innerWidth+10) f.x=-10;
+    if(f.x<-10) f.x=innerWidth+10;
+  }
+  requestAnimationFrame(drawSnow);
+}
+window.addEventListener("resize",resizeSnow);
+resizeSnow();
+drawSnow();
+</script>
+</body>
+</html>
